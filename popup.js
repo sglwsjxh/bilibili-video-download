@@ -54,11 +54,10 @@ function downloadViaContent(url, filename) {
 
 function runFFmpegMerge(videoFile, audioFile, outputFile) {
   const downloadsDir = 'C:\\Users\\mark3\\Downloads';
-  const tempOutput = 'output.mp4';
-  const cmd = `cd /d "${downloadsDir}" && ffmpeg -i "${videoFile}" -i "${audioFile}" -c copy "${tempOutput}" && del "${videoFile}" "${audioFile}" && ren "${tempOutput}" "${outputFile}"`;
+  const cmd = `cd /d "${downloadsDir}" && ffmpeg -y -i "${videoFile}" -i "${audioFile}" -c copy "${outputFile}" && del "${videoFile}" "${audioFile}"`;
   const encodedCmd = encodeURIComponent(cmd);
   const ffmpegUrl = `ffmpeg-run://${encodedCmd}`;
-  
+
   const a = document.createElement('a');
   a.href = ffmpegUrl;
   a.click();
