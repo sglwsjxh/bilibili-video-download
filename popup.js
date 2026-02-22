@@ -52,6 +52,18 @@ function downloadViaContent(url, filename) {
   });
 }
 
+function runFFmpegMerge(videoFile, audioFile, outputFile) {
+  const downloadsDir = 'C:\\Users\\mark3\\Downloads';
+  const tempOutput = 'output.mp4';
+  const cmd = `cd /d "${downloadsDir}" && ffmpeg -i "${videoFile}" -i "${audioFile}" -c copy "${tempOutput}" && del "${videoFile}" "${audioFile}" && ren "${tempOutput}" "${outputFile}"`;
+  const encodedCmd = encodeURIComponent(cmd);
+  const ffmpegUrl = `ffmpeg-run://${encodedCmd}`;
+  
+  const a = document.createElement('a');
+  a.href = ffmpegUrl;
+  a.click();
+}
+
 document.getElementById('downloadBtn').addEventListener('click', async () => {
   const data = window.currentData;
   if (!data?.videoUrl || !data?.audioUrl) {
@@ -59,13 +71,19 @@ document.getElementById('downloadBtn').addEventListener('click', async () => {
     return;
   }
 
-  showStatus('开始下载视频...', false);
+  showStatus('开始下载视频流...', false);
   try {
     await downloadViaContent(data.videoUrl, 'video.mp4');
-    showStatus('视频下载完成，开始下载音频...', false);
+    showStatus('视频下载完成，开始下载音频流...', false);
     await downloadViaContent(data.audioUrl, 'audio.mp3');
-    const baseName = sanitize(data.title);
-    showStatus(`下载完成！复制下列命令使用ffmpeg合成视频：\nffmpeg -i video.mp4 -i audio.mp3 -c copy "${baseName}.mp4;rm video.mp4, audio.mp3"`, false);
+    
+    const outputFile = sanitize(data.title) + '.mp4';
+    showStatus('下载完成，调用ffmpeg合成...', false);
+    
+    setTimeout(() => {
+      runFFmpegMerge('video.mp4', 'audio.mp3', outputFile);
+      showStatus('ffmpeg合成命令已执行，请查看终端窗口', false);
+    }, 1000);
   } catch (err) {
     showStatus('下载失败：' + err, true);
   }
