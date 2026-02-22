@@ -101,8 +101,6 @@ winget install FFmpeg
 
 ## 📄 许可证
 
-本项目采用 **MIT 许可证**，您可以自由使用、修改和分发，但需保留原作者的版权声明。
+本项目基于 MIT 许可证开源
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-Copyright (c) 2025 清木殇
+详细条款请参见 [LICENSE](LICENSE) 文件
