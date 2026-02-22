@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "B站视频下载",
   "version": "1.0.0",
-  "description": "提取B站视频与音频流地址，支持直接下载",
+  "description": "提取和下载B站视频与音频流",
   "author": "清木殇",
   "action": {
     "default_popup": "popup.html",
