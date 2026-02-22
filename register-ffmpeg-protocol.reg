@@ -1,8 +1,0 @@
-Windows Registry Editor Version 5.00
-
-[HKEY_CLASSES_ROOT\ffmpeg-run]
-@="URL:ffmpeg-run Protocol"
-"URL Protocol"=""
-
-[HKEY_CLASSES_ROOT\ffmpeg-run\shell\open\command]
-@="wscript.exe \"C:\\Users\\mark3\\Desktop\\code\\projects\\web-extend\\bilibili-video-download\\run-ffmpeg.vbs\" \"%1\""
