@@ -81,7 +81,7 @@ document.getElementById('downloadBtn').addEventListener('click', async () => {
     
     setTimeout(() => {
       runFFmpegMerge('video.mp4', 'audio.mp3', outputFile);
-      showStatus('ffmpeg合成命令已执行，请查看终端窗口', false);
+      showStatus('ffmpeg合成命令已执行', false);
     }, 1000);
   } catch (err) {
     showStatus('下载失败：' + err, true);
