@@ -65,7 +65,7 @@ document.getElementById('downloadBtn').addEventListener('click', async () => {
     showStatus('视频下载完成，开始下载音频...', false);
     await downloadViaContent(data.audioUrl, 'audio.mp3');
     const baseName = sanitize(data.title);
-    showStatus(`下载完成！复制下列命令使用ffmpeg合成视频：\nffmpeg -i video.mp4 -i audio.mp3 -c copy "${baseName}.mp4"`, false);
+    showStatus(`下载完成！复制下列命令使用ffmpeg合成视频：\nffmpeg -i video.mp4 -i audio.mp3 -c copy "${baseName}.mp4;rm video.mp4, audio.mp3"`, false);
   } catch (err) {
     showStatus('下载失败：' + err, true);
   }
