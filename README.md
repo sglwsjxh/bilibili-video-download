@@ -1,20 +1,11 @@
-# B站视频下载器 (Bilibili Video Downloader)
+# 🎯 B站视频下载器 (Bilibili Video Downloader)
+
+> 一键提取 · 双轨下载 · FFmpeg 自动合成
 
 <p align="center">
-  <img src="images/icon.jpg" alt="B站视频下载器图标" width="128" height="128">
-</p>
-
-<p align="center">
-  <strong>🎯 一键提取 · 双轨下载 · FFmpeg 自动合成</strong>
-</p>
-
-<p align="center">
-  <a href="https://github.com/sglwsjxh/bilibili-video-download/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License">
-  </a>
-  <a href="https://github.com/sglwsjxh/bilibili-video-download/releases">
-    <img src="https://img.shields.io/badge/version-1.0.0-brightgreen.svg" alt="Version 1.0.0">
-  </a>
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
+  <img src="https://img.shields.io/badge/平台-Web-blue" alt="Platform">
+  <img src="https://img.shields.io/badge/依赖-无-orange" alt="Dependencies">
 </p>
 
 ---
